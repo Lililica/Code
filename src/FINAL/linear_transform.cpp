@@ -249,9 +249,9 @@ Eigen::MatrixXd homography_leastsquare_transform_P2(const Eigen::MatrixXd &P1,
 
   // check rank and determinant
   Eigen::FullPivLU<Eigen::MatrixXd> lu_decomp(M);
-  if (lu_decomp.rank() < 8)
-    throw std::domain_error("2D homography: data should be at least rank 9:"
-                            "you may have aligned points");
+  // if (lu_decomp.rank() < 8)
+  //   throw std::domain_error("2D homography: data should be at least rank 8:"
+  //                           "you may have aligned points");
   // if(std::abs(lu_decomp.determinant()) < 1.0e-8) throw std::domain_error("2D
   // homography: data should non zero determinant: you may have aligned
   // points");
